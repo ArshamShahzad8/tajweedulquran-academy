@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Tajweed-ul-Quran - Learn Quran Online with Tajweed, Hifz & Arabic"/>
+  <title>Quran Tafseer Course - Tajweed-ul-Quran</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: rgb(47, 91, 159);
+      --primary-dark: rgb(35, 70, 130);
+      --accent: #f59e0b;
+      --light-bg: #f8fafc;
+      --gray-bg: #f1f5f9;
+      --dark-text: #0f172a;
+      --gray-text: #64748b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+    h1, h2, h3 { font-family: 'Amiri', serif; }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+        .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      font-weight: 500;
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .btn-start {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* ================= COURSE DETAIL ================= */
+    .course-detail {
+      padding: 8rem 5% 4rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .course-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .course-header h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .course-header p {
+      font-size: 1.2rem;
+      color: var(--gray-text);
+    }
+    .course-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .course-info {
+      background: var(--light-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .course-info h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .course-info ul {
+      list-style: none;
+      padding: 0;
+    }
+    .course-info li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .course-info li:before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    .curriculum {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .curriculum h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .curriculum ul {
+      list-style: none;
+      padding: 0;
+    }
+    .curriculum li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .curriculum li:before {
+      content: "📖";
+      margin-right: 0.5rem;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .back-btn:before {
+      content: "← ";
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width: 900px){
+      .course-content { grid-template-columns: 1fr; }
+    }
+
+    /* Footer styles */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    .footer-grid h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-grid a {
+      color: rgba(255,255,255,0.9);
+      display: block;
+      margin: 0.6rem 0;
+      text-decoration: none;
+    }
+    .footer-grid a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 2rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blogs</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-start">Start Free Trial</a>
+    </div>
+  </nav>
+</header>
+
+<section class="course-detail">
+  <a href="courses.html" class="back-btn">Back to Courses</a>
+  
+  <div class="course-header">
+    <h1>Quran Tafseer</h1>
+    <p>In-depth study of Quran meanings, context, and lessons from authentic sources</p>
+  </div>
+  
+  <div class="course-content">
+    <div class="course-info">
+      <h2>Course Overview</h2>
+      <ul>
+        <li><strong>Level:</strong> Advanced</li>
+        <li><strong>Duration:</strong> 12-24 months</li>
+        <li><strong>Frequency:</strong> 2-3 sessions per week</li>
+        <li><strong>Prerequisites:</strong> Quran reading with Tajweed</li>
+        <li><strong>Language:</strong> English/Arabic</li>
+      </ul>
+      
+      <h2>What You'll Learn</h2>
+      <p>Explore the deep meanings of the Quran through authentic Tafseer sources. Understand historical context, rulings, and practical lessons for modern life.</p>
+    </div>
+    
+    <div class="curriculum">
+      <h2>Detailed Curriculum</h2>
+      <ul>
+        <li>Tafseer of selected Juz and complete Surahs</li>
+        <li>Historical context (Asbab al-Nuzul)</li>
+        <li>Understanding Islamic rulings (Ahkam)</li>
+        <li>Lessons and morals for daily life</li>
+        <li>Comparison of classical Tafseer works</li>
+        <li>Discussion and reflection sessions</li>
+        <li>Study of major Tafseer scholars</li>
+        <li>Application of Quranic teachings</li>
+        <li>Scientific miracles in the Quran</li>
+        <li>Social and ethical guidance</li>
+        <li>Stories of Prophets and lessons</li>
+        <li>Contemporary issues from Islamic perspective</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Tajweed-ul-Quran</h4>
+      <p>Learn Quran Online with Proper Tajweed, Hifz & Arabic</p>
+      <p>Email: tajweedulquranofficial@outlook.com</p>
+      <p>WhatsApp: +92 331 5242744</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blogs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Our Courses</h4>
+      <a href="quran-recitation.html">Quran Recitation</a>
+      <a href="tajweed-mastery.html">Tajweed Mastery</a>
+      <a href="quran-memorization.html">Quran Memorization</a>
+      <a href="arabic-language.html">Arabic Language</a>
+      <a href="noorani-qaida.html">Noorani Qaida</a>
+      <a href="quran-tafseer.html">Quran Tafseer</a>
+      <a href="islamic-studies.html">Islamic Studies</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tajweed-ul-Quran. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+

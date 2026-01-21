@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="10 Essential Tajweed Rules Every Beginner Should Know"/>
+  <title>10 Essential Tajweed Rules Every Beginner Should Know - Tajweed-ul-Quran Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: rgb(47, 91, 159);
+      --primary-dark: rgb(35, 70, 130);
+      --accent: #f59e0b;
+      --light-bg: #f8fafc;
+      --gray-bg: #f1f5f9;
+      --dark-text: #0f172a;
+      --gray-text: #64748b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+    h1, h2, h3 { font-family: 'Amiri', serif; }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+        .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .btn-start {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* ================= ARTICLE DETAIL ================= */
+    .article-detail {
+      padding: 8rem 5% 4rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .article-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .article-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--gray-text);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .article-content h2 {
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+      font-size: 1.8rem;
+    }
+    .article-content h3 {
+      color: var(--primary);
+      margin: 1.5rem 0 0.8rem;
+      font-size: 1.4rem;
+    }
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+    .article-content ul {
+      margin: 1rem 0 1.5rem 2rem;
+      list-style: disc;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .highlight {
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-left: 4px solid var(--accent);
+      margin: 2rem 0;
+    }
+    .tajweed-rule {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #e2e8f0;
+    }
+    .rule-number {
+      background: var(--primary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .rule-title {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    .rule-description {
+      margin-bottom: 1rem;
+    }
+    .rule-example {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-family: 'Amiri', serif;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .back-btn:before {
+      content: "← ";
+    }
+    .article-image {
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .article-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width: 900px){
+      .article-header h1 { font-size: 2rem; }
+    }
+
+    /* Footer styles */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    .footer-grid h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-grid a {
+      color: rgba(255,255,255,0.9);
+      display: block;
+      margin: 0.6rem 0;
+      text-decoration: none;
+    }
+    .footer-grid a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 2rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../blog.html">Blogs</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../login.html" class="btn-start">Start Free Trial</a>
+    </div>
+  </nav>
+</header>
+
+<section class="article-detail">
+  <a href="../blog.html" class="back-btn">Back to Blog</a>
+
+  <div class="article-header">
+    <h1>10 Essential Tajweed Rules Every Beginner Should Know</h1>
+    <div class="article-meta">Sheikh Ahmad Al-Rahman • January 1, 2026 • 12 min read</div>
+  </div>
+
+  <div class="article-image">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Tajweed Rules">
+  </div>
+
+  <div class="article-content">
+    <p>Tajweed, the science of proper Quran recitation, is fundamental to preserving the Quran's miraculous nature. These 10 essential rules form the foundation that every beginner must master. Understanding and applying these rules will transform your recitation from basic reading to beautiful, accurate Quranic pronunciation.</p>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">1</div>
+      <div class="rule-title">Makharij al-Huruf (Articulation Points)</div>
+      <div class="rule-description">Every Arabic letter has a specific point of articulation in the mouth, throat, or nasal cavity. Proper makharij ensures clear distinction between similar-sounding letters.</div>
+      <div class="rule-example">
+        <p>Examples: خ (kha) from the throat, ش (sheen) from the middle of the tongue</p>
+        <p>Practice: Record yourself and compare with expert reciters</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">2</div>
+      <div class="rule-title">Sifaat al-Huruf (Letter Characteristics)</div>
+      <div class="rule-description">Letters have characteristics like heaviness (tafkhim) or lightness (tarqiq), elongation or shortening. These affect how letters are pronounced.</div>
+      <div class="rule-example">
+        <p>Heavy letters: ط ق ص ض ظ</p>
+        <p>Light letters: ت ث د ذ ز س ش</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">3</div>
+      <div class="rule-title">Noon Saakinah and Tanween Rules</div>
+      <div class="rule-description">When noon has sukoon or tanween appears, specific rules apply based on the following letter: izhar (clear pronunciation), idgham (merging), iqlab (changing to meem), or ikhfaa (hiding).</div>
+      <div class="rule-example">
+        <p>إظهار: مِنْ رَبِّكُمْ (noon pronounced clearly)</p>
+        <p>إدغام: مِنْ مَالٍ (noon merges with meem)</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">4</div>
+      <div class="rule-title">Meem Saakinah Rules</div>
+      <div class="rule-description">Similar to noon saakinah, meem with sukoon follows rules of idgham (merging with following letter), ikhfaa (hiding with ghunna), or izhar (clear pronunciation).</div>
+      <div class="rule-example">
+        <p>إدغام: وَالْمُؤْمِنِينَ (meem merges with following meem)</p>
+        <p>إخفاء: مِنْ بَعْدِ (meem hidden with ghunna)</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">5</div>
+      <div class="rule-title">Qalqalah (Echo Sound)</div>
+      <div class="rule-description">Letters ق ط ب ج د with sukoon produce a slight echoing or bouncing sound. There are three levels: qalqalah kubra (strong), wusta (medium), and sughra (weak).</div>
+      <div class="rule-example">
+        <p>Examples: فَبِأَيِّ (ba in "biayyi" has qalqalah)</p>
+        <p>Practice: Tap your finger while pronouncing to feel the bounce</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">6</div>
+      <div class="rule-title">Madd (Elongation) Rules</div>
+      <div class="rule-description">Vowel letters (ا و ي) are elongated according to specific rules. Natural madd is 2 counts, others range from 2-6 counts based on the type.</div>
+      <div class="rule-example">
+        <p>Madd asli: قُرْآنَ (natural madd - 2 counts)</p>
+        <p>Madd badal: قَالُوا (substitute madd - 2 counts)</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">7</div>
+      <div class="rule-title">Hamzatul Wasl and Qat'</div>
+      <div class="rule-description">Hamza at the beginning of words can be connecting (wasl) or cutting (qat'). Wasl hamza is not pronounced when starting a recitation, while qat' hamza always requires pronunciation.</div>
+      <div class="rule-example">
+        <p>Wasl: ابن (ibn - pronounced when continuing)</p>
+        <p>Qat': أكل (akl - always pronounced)</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">8</div>
+      <div class="rule-title">Rules of Raa</div>
+      <div class="rule-description">The letter ر (raa) has special rules when preceded by fatha or damma. It can be tarqiq (light) or tafkhim (heavy) depending on the vowel and surrounding letters.</div>
+      <div class="rule-example">
+        <p>Heavy: مَرْيَمَ (raa with fatha is heavy)</p>
+        <p>Light: رَبِّ (raa with kasra is light)</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">9</div>
+      <div class="rule-title">Waqf and Ibtida (Stopping and Starting)</div>
+      <div class="rule-description">Proper places to stop and start recitation. Some stops are obligatory (waqf lazim), others are recommended (waqf murakhkhas). Signs in the Mushaf guide correct stopping.</div>
+      <div class="rule-example">
+        <p>Wa laa (لَا) - better not to stop</p>
+        <p>Sakta (سكتة) - short pause</p>
+      </div>
+    </div>
+
+    <div class="tajweed-rule">
+      <div class="rule-number">10</div>
+      <div class="rule-title">Ghunna and Its Application</div>
+      <div class="rule-description">The nasal sound produced during idgham and ikhfaa. Ghunna lasts for 2 counts and is produced by blocking the mouth while allowing air through the nose.</div>
+      <div class="rule-example">
+        <p>Practice: Hold "mmm" sound for 2 counts</p>
+        <p>Applied in: Noon saakinah idgham, ikhfaa, and iqlab</p>
+      </div>
+    </div>
+
+    <h2>Why These Rules Matter</h2>
+
+    <p>Mastering these 10 essential Tajweed rules is not just about pronunciation—it's about preserving the Quran's linguistic miracle. Each rule ensures that the words are recited as they were revealed to Prophet Muhammad (peace be upon him).</p>
+
+    <div class="highlight">
+      <p><strong>Remember:</strong> "The Quran is the constitution of Allah, and it is the strong rope of Allah, and it is the wise reminder, and it is the straight path." (Sunan At-Tirmidhi)</p>
+    </div>
+
+    <h2>How to Practice These Rules</h2>
+
+    <h3>1. Start with the Basics</h3>
+    <p>Begin with makharij and sifaat. Practice each letter individually before combining them.</p>
+
+    <h3>2. Use Quality Resources</h3>
+    <p>Study with qualified teachers or use reputable Tajweed apps and books.</p>
+
+    <h3>3. Record and Review</h3>
+    <p>Record your recitation and compare it with expert reciters regularly.</p>
+
+    <h3>4. Be Patient</h3>
+    <p>Tajweed mastery takes time. Focus on one rule at a time and build gradually.</p>
+
+    <h3>5. Seek Correction</h3>
+    <p>Have your recitation checked by knowledgeable individuals to ensure accuracy.</p>
+
+    <h2>Common Mistakes to Avoid</h2>
+
+    <ul>
+      <li>Rushing through verses without proper application of rules</li>
+      <li>Neglecting ghunna in idgham and ikhfaa</li>
+      <li>Incorrect madd lengths</li>
+      <li>Poor articulation points</li>
+      <li>Stopping at inappropriate places</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+
+    <p>These 10 essential Tajweed rules form the foundation of proper Quran recitation. By mastering them, you not only improve your pronunciation but also deepen your connection with the Divine words. Remember, the goal is not perfection, but sincere effort to recite the Quran as beautifully as possible.</p>
+
+    <p>May Allah accept our recitation and make the Quran a source of guidance and light in our lives. Ameen.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Tajweed-ul-Quran</h4>
+      <p>Learn Quran Online with Proper Tajweed, Hifz & Arabic</p>
+      <p>Email: tajweedulquranofficial@outlook.com</p>
+      <p>WhatsApp: +92 331 5242744</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="../index.html">Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../blog.html">Blogs</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Our Courses</h4>
+      <a href="../quran-recitation.html">Quran Recitation</a>
+      <a href="../tajweed-mastery.html">Tajweed Mastery</a>
+      <a href="../quran-memorization.html">Quran Memorization</a>
+      <a href="../arabic-language.html">Arabic Language</a>
+      <a href="../noorani-qaida.html">Noorani Qaida</a>
+      <a href="../quran-tafseer.html">Quran Tafseer</a>
+      <a href="../islamic-studies.html">Islamic Studies</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tajweed-ul-Quran. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+

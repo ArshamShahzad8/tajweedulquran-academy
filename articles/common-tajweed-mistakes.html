@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Common Tajweed Mistakes Beginners Make and How to Avoid Them"/>
+  <title>Common Tajweed Mistakes Beginners Make - Tajweed-ul-Quran Blog</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: rgb(47, 91, 159);
+      --primary-dark: rgb(35, 70, 130);
+      --accent: #f59e0b;
+      --light-bg: #f8fafc;
+      --gray-bg: #f1f5f9;
+      --dark-text: #0f172a;
+      --gray-text: #64748b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+    h1, h2, h3 { font-family: 'Amiri', serif; }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+        .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .btn-start {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* ================= ARTICLE DETAIL ================= */
+    .article-detail {
+      padding: 8rem 5% 4rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .article-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .article-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--gray-text);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .article-content h2 {
+      color: var(--primary);
+      margin: 2rem 0 1rem;
+      font-size: 1.8rem;
+    }
+    .article-content h3 {
+      color: var(--primary);
+      margin: 1.5rem 0 0.8rem;
+      font-size: 1.4rem;
+    }
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+    .article-content ul {
+      margin: 1rem 0 1.5rem 2rem;
+      list-style: disc;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .highlight {
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-left: 4px solid var(--accent);
+      margin: 2rem 0;
+    }
+    .back-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    .back-btn:before {
+      content: "← ";
+    }
+    .article-image {
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .article-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width: 900px){
+      .article-header h1 { font-size: 2rem; }
+    }
+
+    /* Footer styles */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    .footer-grid h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-grid a {
+      color: rgba(255,255,255,0.9);
+      display: block;
+      margin: 0.6rem 0;
+      text-decoration: none;
+    }
+    .footer-grid a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 2rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../blog.html">Blogs</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../login.html" class="btn-start">Start Free Trial</a>
+    </div>
+  </nav>
+</header>
+
+<section class="article-detail">
+  <a href="../blog.html" class="back-btn">Back to Blog</a>
+  
+  <div class="article-header">
+    <h1>Common Tajweed Mistakes Beginners Make</h1>
+    <div class="article-meta">Ustaz Omar Hassan • January 15, 2026 • 9 min read</div>
+  </div>
+  
+  <div class="article-image">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Tajweed Mistakes">
+  </div>
+  
+  <div class="article-content">
+    <p>Tajweed, the science of proper Quran recitation, is essential for preserving the Quran's miraculous nature. However, beginners often make common mistakes that can alter meanings or reduce the beauty of recitation. In this comprehensive guide, we'll identify the most frequent Tajweed errors and provide practical solutions to help you recite correctly.</p>
+
+    <h2>Why Tajweed Matters</h2>
+    
+    <p>Tajweed ensures the Quran is recited as it was revealed to Prophet Muhammad (peace be upon him). Proper pronunciation preserves the meaning and maintains the Quran's linguistic miracle.</p>
+
+    <div class="highlight">
+      <p><strong>Allah says:</strong> "And recite the Quran with measured recitation." (Surah Muzammil: 4)</p>
+    </div>
+
+    <h2>Most Common Pronunciation Mistakes</h2>
+    
+    <h3>1. Incorrect Makharij (Articulation Points)</h3>
+    <p><strong>Mistake:</strong> Pronouncing letters from the wrong articulation point. For example, pronouncing 'ر' (ra) with the tongue tip instead of the correct point.</p>
+    <p><strong>Solution:</strong> Study the 17 articulation points carefully. Practice with a mirror and record yourself to check pronunciation.</p>
+
+    <h3>2. Heavy Letters (Mufakhkham)</h3>
+    <p><strong>Mistake:</strong> Not giving proper emphasis to heavy letters like ط (ta), ق (qaf), and ص (sad).</p>
+    <p><strong>Solution:</strong> Practice these letters individually. Heavy letters require more breath and stronger articulation.</p>
+
+    <h3>3. Light Letters (Muragqaq)</h3>
+    <p><strong>Mistake:</strong> Making light letters too heavy, especially when they appear after heavy letters.</p>
+    <p><strong>Solution:</strong> Be conscious of letter characteristics. Light letters should flow smoothly without extra emphasis.</p>
+
+    <h3>4. Hamza Variations</h3>
+    <p><strong>Mistake:</strong> Confusing different hamza forms (همزة الوصل vs همزة القطع).</p>
+    <p><strong>Solution:</strong> Learn hamza rules systematically. Wasl hamza is pronounced only at the beginning of speech.</p>
+
+    <h2>Tajweed Rules Mistakes</h2>
+    
+    <h3>1. Noon and Meem Mushaddad</h3>
+    <p><strong>Mistake:</strong> Not applying proper ghunna (nasalization) to doubled noon and meem.</p>
+    <p><strong>Solution:</strong> Hold the nasal sound for 2 counts. Practice words like "انن" and "امم".</p>
+
+    <h3>2. Qalqalah</h3>
+    <p><strong>Mistake:</strong> Forgetting to apply qalqalah to letters ب ج د ط ق ت ك when they appear with sukoon.</p>
+    <p><strong>Solution:</strong> Bounce the sound slightly. There are three types: kubra (strong), wusta (medium), and sughra (weak).</p>
+
+    <h3>3. Madd Rules</h3>
+    <p><strong>Mistake:</strong> Incorrect lengthening of madd letters (ا و ي).</p>
+    <p><strong>Solution:</strong> Learn the six madd rules. Natural madd is 2 counts, others vary from 2-6 counts.</p>
+
+    <h3>4. Waqf and Ibtida</h3>
+    <p><strong>Mistake:</strong> Stopping at inappropriate places or not applying proper waqf rules.</p>
+    <p><strong>Solution:</strong> Study waqf signs in the Mushaf. Some stops are obligatory, others recommended.</p>
+
+    <h2>Rhythm and Flow Mistakes</h2>
+    
+    <h3>1. Rushing Through Verses</h3>
+    <p><strong>Mistake:</strong> Reciting too quickly without proper pauses and reflections.</p>
+    <p><strong>Solution:</strong> Practice measured recitation. Give each word its due time and contemplate meanings.</p>
+
+    <h3>2. Ignoring Breath Control</h3>
+    <p><strong>Mistake:</strong> Taking breaths in the middle of words or at inappropriate places.</p>
+    <p><strong>Solution:</strong> Learn proper breathing techniques. Take breaths at natural pauses without breaking word integrity.</p>
+
+    <h3>3. Monotone Recitation</h3>
+    <p><strong>Mistake:</strong> Reciting without proper modulation and emotional expression.</p>
+    <p><strong>Solution:</strong> Study the Quran's melodic nature. Different verses have different tones and emotions.</p>
+
+    <h2>Common Mistakes in Specific Surahs</h2>
+    
+    <h3>1. Surah Al-Fatihah</h3>
+    <p><strong>Mistake:</strong> Incorrect pronunciation of "الرحمن الرحيم" - not distinguishing between the two attributes.</p>
+    <p><strong>Solution:</strong> Ar-Rahman has a longer madd (4-5 counts), Ar-Raheem has natural madd (2 counts).</p>
+
+    <h3>2. Surah Al-Ikhlas</h3>
+    <p><strong>Mistake:</strong> Rushing through the short verses without proper tajweed application.</p>
+    <p><strong>Solution:</strong> Apply all rules carefully. Pay special attention to qalqalah in "لَمْ يَلِدْ".</p>
+
+    <h3>3. Long Surahs</h3>
+    <p><strong>Mistake:</strong> Fatigue leading to pronunciation errors in longer surahs like Al-Baqarah.</p>
+    <p><strong>Solution:</strong> Break long recitations into manageable sections. Take short breaks if needed.</p>
+
+    <h2>How to Avoid These Mistakes</h2>
+    
+    <h3>1. Get Proper Training</h3>
+    <p>Learn from qualified teachers who can correct your mistakes in real-time. Self-learning has limitations.</p>
+
+    <h3>2. Use Technology</h3>
+    <p>Record your recitation and compare with expert reciters. Use Tajweed apps and online resources for practice.</p>
+
+    <h3>3. Practice Regularly</h3>
+    <p>Dedicate time daily for Tajweed practice. Consistency is key to mastering proper pronunciation.</p>
+
+    <h3>4. Focus on One Rule at a Time</h3>
+    <p>Don't try to learn everything at once. Master one Tajweed rule before moving to the next.</p>
+
+    <h3>5. Listen and Repeat</h3>
+    <p>Listen to expert reciters like Sheikh Sudais, Sheikh Ghamidi, or Sheikh Saad Al-Ghamidi, then repeat after them.</p>
+
+    <h2>Advanced Common Mistakes</h2>
+    
+    <h3>1. Idgham Rules</h3>
+    <p><strong>Mistake:</strong> Incorrect application of idgham (merging) rules for similar letters.</p>
+    <p><strong>Solution:</strong> Study the two types: idgham ma'al ghunna and idgham bila ghunna.</p>
+
+    <h3>2. Iqlab</h3>
+    <p><strong>Mistake:</strong> Not changing noon saakinah to meem when followed by ب.</p>
+    <p><strong>Solution:</strong> Practice words like "مِنْ بَعْدِ" - the noon changes to meem with ghunna.</p>
+
+    <h3>3. Ikhfaa</h3>
+    <p><strong>Mistake:</strong> Not properly hiding the sound of noon saakinah and tanween.</p>
+    <p><strong>Solution:</strong> Hide the sound without fully pronouncing it. Practice with letters like ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك.</p>
+
+    <h2>The Importance of Patience</h2>
+    
+    <p>Learning Tajweed is a gradual process. Don't be discouraged by mistakes - they're part of the learning journey. Every great reciter started as a beginner and made these same errors.</p>
+
+    <h2>Resources for Improvement</h2>
+    
+    <ul>
+      <li>Tajweed books like "Tajweed Rules of the Quran" by Kareema Czerepinski</li>
+      <li>Online courses and tutorials</li>
+      <li>Mobile apps like "Tajweed Quran" and "Quran Audio"</li>
+      <li>Local Quran centers and mosques</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    
+    <p>Avoiding common Tajweed mistakes requires awareness, practice, and proper guidance. By identifying these errors and working systematically to correct them, you'll develop beautiful, accurate recitation that preserves the Quran's sanctity. Remember, the goal is not perfection, but sincere effort to recite Allah's words as beautifully as possible.</p>
+
+    <p>May Allah accept our recitation and make the Quran a means of guidance for us. Ameen.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Tajweed-ul-Quran</h4>
+      <p>Learn Quran Online with Proper Tajweed, Hifz & Arabic</p>
+      <p>Email: tajweedulquranofficial@outlook.com</p>
+      <p>WhatsApp: +92 331 5242744</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="../index.html">Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../blog.html">Blogs</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Our Courses</h4>
+      <a href="../quran-recitation.html">Quran Recitation</a>
+      <a href="../tajweed-mastery.html">Tajweed Mastery</a>
+      <a href="../quran-memorization.html">Quran Memorization</a>
+      <a href="../arabic-language.html">Arabic Language</a>
+      <a href="../noorani-qaida.html">Noorani Qaida</a>
+      <a href="../quran-tafseer.html">Quran Tafseer</a>
+      <a href="../islamic-studies.html">Islamic Studies</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tajweed-ul-Quran. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+

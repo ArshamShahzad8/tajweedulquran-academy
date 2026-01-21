@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Tajweed-ul-Quran - Get in touch for Quran learning, Tajweed, and online classes"/>
+  <title>Contact Us | Tajweed-ul-Quran</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: rgb(47, 91, 159);
+      --primary-dark: rgb(35, 70, 130);
+      --accent: #f59e0b;
+      --light-bg: #f8fafc;
+      --gray-bg: #f1f5f9;
+      --dark-text: #0f172a;
+      --gray-text: #64748b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+    h1, h2, h3 { font-family: 'Amiri', serif; }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .btn-start {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* ================= CONTACT HERO ================= */
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 9rem 5% 6rem;
+      text-align: center;
+      margin-top: 80px; /* space for fixed navbar */
+    }
+    .contact-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* ================= CONTACT INFO CARDS ================= */
+    .contact-info {
+      padding: 4rem 5%;
+      background: var(--light-bg);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .info-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent);
+    }
+    .info-card svg, .info-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      background: rgba(47,91,159,0.1);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .info-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    .info-card p {
+      color: var(--gray-text);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .info-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .info-card a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* ================= FORM & MAP SECTION ================= */
+    .contact-main {
+      padding: 5rem 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1300px;
+      margin: auto;
+    }
+    @media (max-width: 992px) {
+      .contact-main {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-form {
+      background: white;
+      padding: 3rem;
+      border-radius: 1.2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 1.2rem 1.2rem 0 0;
+    }
+    .contact-form h2 {
+      color: var(--primary);
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .form-group {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem 1rem 3rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+      background: var(--light-bg);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(47,91,159,0.1);
+      background: white;
+    }
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .form-group i {
+      position: absolute;
+      left: 1rem;
+      top: 2.8rem;
+      color: var(--gray-text);
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+    .form-group input:focus + i,
+    .form-group textarea:focus + i {
+      color: var(--primary);
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 1.2rem 3rem;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: var(--transition);
+    }
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(47,91,159,0.3);
+    }
+
+    .map-section iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* ================= FAQs ================= */
+    .faqs {
+      padding: 5rem 5%;
+      background: var(--gray-bg);
+    }
+    .faqs h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1.5rem 2rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: #f8fafc;
+      text-align: center;
+    }
+    .faq-answer {
+      padding: 0 2rem 1.5rem;
+      color: var(--gray-text);
+      display: none;
+      text-align: center;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    .footer-grid h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-grid a {
+      color: rgba(255,255,255,0.9);
+      display: block;
+      margin: 0.6rem 0;
+      text-decoration: none;
+    }
+    .footer-grid a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 7rem 5% 5rem;
+      }
+      .contact-hero h1 {
+        font-size: 2.4rem;
+      }
+      .contact-form {
+        padding: 2rem;
+      }
+      .form-group input,
+      .form-group textarea {
+        padding: 0.9rem 1rem 0.9rem 2.8rem;
+      }
+      .form-group i {
+        left: 0.8rem;
+        top: 2.6rem;
+      }
+      .contact-main {
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blogs</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="btn-start">Start Free Trial</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Contact Hero -->
+<section class="contact-hero">
+  <h1>Get In Touch</h1>
+  <p>Have questions? We're here to help you start your Quranic learning journey.</p>
+</section>
+
+<!-- Contact Info Cards -->
+<section class="contact-info">
+  <div class="info-card">
+    <div style="background: rgba(47,91,159,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+      <i class="fas fa-envelope" style="font-size: 1.8rem; color: var(--primary);"></i>
+    </div>
+    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Email Support</h3>
+    <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem;">
+      <a href="mailto:tajweedulquranofficial@outlook.com" style="color: var(--primary); text-decoration: none;">
+        tajweedulquranofficial@outlook.com
+      </a>
+    </p>
+    <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Quick response within 24 hours</p>
+  </div>
+  <div class="info-card">
+    <div style="background: rgba(47,91,159,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+      <i class="fas fa-phone" style="font-size: 1.8rem; color: var(--primary);"></i>
+    </div>
+    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Phone Support</h3>
+    <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">
+      <a href="tel:+923315242744" style="color: var(--primary); text-decoration: none;">
+        +92 331 5242744
+      </a>
+    </p>
+    <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Mon-Fri, 7 AM - 5 PM PST</p>
+  </div>
+  <div class="info-card">
+    <div style="background: rgba(47,91,159,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+      <i class="fas fa-clock" style="font-size: 1.8rem; color: var(--primary);"></i>
+    </div>
+    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Business Hours</h3>
+    <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">7:00 AM - 5:00 PM</p>
+    <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Pakistan Standard Time</p>
+  </div>
+</section>
+
+<!-- Form + Map -->
+<section class="contact-main">
+  <div class="contact-form">
+    <h2>Send us a Message</h2>
+    <form name="contact" method="POST" data-netlify="true">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+92 331 5055667">
+        <i class="fas fa-phone"></i>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        <i class="fas fa-tag"></i>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your learning goals, experience level, or any specific questions..."></textarea>
+        <i class="fas fa-comment" style="top: 3rem;"></i>
+      </div>
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
+        Send Message
+      </button>
+    </form>
+  </div>
+
+  <div class="map-section">
+    <h2 style="color: var(--primary); margin-bottom: 1.5rem; text-align: center;">Visit Our Location</h2>
+    <!-- Google Maps Embed - approximate location for Dhok Chaudhrian, Rawalpindi (adjust q= or lat/lng if needed) -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.5!2d73.025!3d33.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzI0LjAiTiA3M8KwMDEnMzAuMCJF!5e0!3m2!1sen!2s!4v1737400000000!5m2!1sen!2s" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <div style="text-align:center; margin-top:1.5rem; padding: 1.5rem; background: var(--light-bg); border-radius: 0.8rem;">
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Tajweed-ul-Quran Office</h3>
+      <p style="color:var(--gray-text); margin: 0.3rem 0;">
+        <i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 0.5rem;"></i>
+        Street 2, House 6, Block D, Dhok Chaudhrian, Rawalpindi
+      </p>
+      <p style="color:var(--gray-text); margin: 0.3rem 0;">
+        <i class="fas fa-building" style="color: var(--accent); margin-right: 0.5rem;"></i>
+        Near Ali Trust School
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="faqs">
+  <h2>Frequently Asked Questions</h2>
+  
+  <div class="faq-item">
+    <div class="faq-question">How do I get started?</div>
+    <div class="faq-answer">Simply fill out the contact form above, and our team will get in touch within 24 hours to discuss your needs and schedule a free trial class if interested.</div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">What do I need for online classes?</div>
+    <div class="faq-answer">You'll need a computer or tablet with stable internet, a webcam, and a microphone. We provide all learning materials and access to our online platform.</div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">Can I enroll multiple family members?</div>
+    <div class="faq-answer">Yes! We offer special family discounts for multiple students. Mention the number of learners in your message, and we'll provide personalized pricing options.</div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">What if I'm a complete beginner?</div>
+    <div class="faq-answer">No problem at all! We have beginner-friendly courses starting from the Arabic alphabet and gradually building your recitation and Tajweed skills.</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Tajweed-ul-Quran</h4>
+      <p>Learn Quran Online with Proper Tajweed & Understanding</p>
+      <p>Email: tajweedulquranofficial@outlook.com</p>
+      <p>WhatsApp: +92 331 5242744</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blogs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Our Courses</h4>
+      <a href="quran-recitation.html">Quran Recitation</a>
+      <a href="tajweed-mastery.html">Tajweed Mastery</a>
+      <a href="quran-memorization.html">Quran Memorization</a>
+      <a href="arabic-language.html">Arabic Language</a>
+      <a href="noorani-qaida.html">Noorani Qaida</a>
+      <a href="quran-tafseer.html">Quran Tafseer</a>
+      <a href="islamic-studies.html">Islamic Studies</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tajweed-ul-Quran. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+// Optional: Simple FAQ accordion
+document.querySelectorAll('.faq-question').forEach(item => {
+  item.addEventListener('click', () => {
+    const parent = item.parentElement;
+    parent.classList.toggle('active');
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

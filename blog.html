@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Quran Learning Blog - Articles, tips, and insights to enhance your Quranic journey"/>
+  <title>Quran Learning Blog | Islamic Knowledge & Guidance</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: rgb(47, 91, 159);
+      --primary-dark: rgb(35, 70, 130);
+      --accent: #f59e0b;
+      --light-bg: #f8fafc;
+      --gray-bg: #f1f5f9;
+      --dark-text: #0f172a;
+      --gray-text: #64748b;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+    h1, h2, h3 { font-family: 'Amiri', serif; }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .nav-links a.active {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .btn-start {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* ================= BLOG HERO / CONTAINER AFTER NAVBAR ================= */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 9rem 5% 6rem;
+      text-align: center;
+      margin-top: 80px; /* space for fixed navbar */
+    }
+    .blog-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .blog-hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+    }
+    .search-bar {
+      max-width: 600px;
+      margin: auto;
+      position: relative;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      outline: none;
+    }
+
+    /* ================= BLOG SECTION ================= */
+    .blog-section {
+      padding: 5rem 5% 6rem;
+      background: var(--white);
+    }
+    .blog-section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+
+    .featured-article {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .featured-img {
+      position: relative;
+      height: 500px;
+    }
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 2rem;
+      color: white;
+    }
+    .featured-overlay h3 {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .featured-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    .featured-content {
+      padding: 2.5rem;
+    }
+    .featured-content p {
+      color: var(--gray-text);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .read-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 0.8rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .read-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .articles-grid {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.5rem;
+    }
+    .article-card {
+      background: white;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover {
+      transform: translateY(-8px);
+    }
+    .article-img {
+      position: relative;
+      height: 240px;
+    }
+    .article-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .category-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: white;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .spiritual { background: var(--primary); }
+    .article-content {
+      padding: 1.8rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-content h3 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .article-meta {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      margin-bottom: 1rem;
+    }
+    .article-content p {
+      color: var(--gray-text);
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+    .stats {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      margin-top: auto;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 5% 2rem;
+      text-align: center;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    .footer-grid h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .footer-grid a {
+      color: rgba(255,255,255,0.9);
+      display: block;
+      margin: 0.6rem 0;
+      text-decoration: none;
+    }
+    .footer-grid a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .blog-hero {
+        padding: 7rem 5% 5rem;
+      }
+      .blog-hero h1 {
+        font-size: 2.4rem;
+      }
+      .featured-img {
+        height: 400px;
+      }
+      .featured-overlay h3 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html" class="active">Blogs</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-start">Start Free Trial</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Blog Hero Container (after navbar) -->
+<section class="blog-hero">
+  <h1>Quran Learning Blog</h1>
+  <p>Articles, tips, and insights to enhance your Quranic journey</p>
+  <div class="search-bar">
+    <input type="text" placeholder="Search articles...">
+  </div>
+</section>
+
+<!-- Blog Articles -->
+<section class="blog-section">
+
+  <!-- Featured Article (Big one) -->
+  <div class="featured-article">
+    <div class="featured-img">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Featured Tajweed">
+      <div class="featured-overlay">
+        <h3>10 Essential Tajweed Rules Every Beginner Should Know</h3>
+      </div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-meta">
+        <span>Sheikh Ahmad Al-Rahman</span>
+        <span>January 1, 2026</span>
+        <span>5 min read</span>
+      </div>
+      <p>Master the fundamentals of Tajweed with these essential rules that will improve your Quran recitation immediately. Perfect for beginners looking to build a strong foundation in proper pronunciation and recitation.</p>
+      <div class="stats">
+        <span>❤️ 234</span>
+        <span>💬 45</span>
+      </div>
+      <a href="./articles/10-essential-tajweed-rules.html" class="read-btn">Read Full Article</a>
+    </div>
+  </div>
+
+  <h2>More Articles</h2>
+
+  <div class="articles-grid">
+
+    <!-- Article 1 -->
+    <div class="article-card">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Memorization">
+        <span class="category-badge">Memorization</span>
+      </div>
+      <div class="article-content">
+        <h3>The Benefits of Memorizing the Quran: A Complete Guide</h3>
+        <div class="article-meta">Ustazha Fatima Hasan • January 1, 2026 • 8 min read</div>
+        <p>Discover the spiritual, mental, and social benefits of becoming a Hafiz and how this noble habit transforms your life forever.</p>
+        <div class="stats">
+          <span>❤️ 567</span>
+          <span>💬 89</span>
+        </div>
+        <a href="./articles/benefits-memorizing-quran.html" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="article-card">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb" alt="Quran Study">
+        <span class="category-badge">Quran Study</span>
+      </div>
+      <div class="article-content">
+        <h3>How to Build a Consistent Quran Reading Routine</h3>
+        <div class="article-meta">Sheikh Ibrahim Malik • December 28, 2025 • 6 min read</div>
+        <p>Practical tips and strategies to develop a daily Quran reading habit that lasts and brings barakah into your life.</p>
+        <div class="stats">
+          <span>❤️ 423</span>
+          <span>💬 67</span>
+        </div>
+        <a href="./articles/consistent-quran-routine.html" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="article-card">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Spiritual">
+        <span class="category-badge spiritual">Spiritual</span>
+      </div>
+      <div class="article-content">
+        <h3>Understanding the Spiritual Significance of Quran Recitation</h3>
+        <div class="article-meta">Sheikh Ahmad Al-Rahman • December 25, 2025 • 7 min read</div>
+        <p>Explore the deeper meanings and spiritual rewards of reciting the Quran with proper understanding and presence of heart.</p>
+        <div class="stats">
+          <span>❤️ 789</span>
+          <span>💬 123</span>
+        </div>
+        <a href="./articles/spiritual-significance-recitation.html" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+    <!-- Additional articles (4-6) for total ~7 -->
+    <div class="article-card">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Tajweed Advanced">
+        <span class="category-badge">Tajweed</span>
+      </div>
+      <div class="article-content">
+        <h3>Common Tajweed Mistakes Beginners Make and How to Avoid Them</h3>
+        <div class="article-meta">Sheikh Fatima • January 10, 2026 • 6 min read</div>
+        <p>Learn about frequent pronunciation errors and practical fixes to perfect your recitation quickly.</p>
+        <div class="stats">
+          <span>❤️ 312</span>
+          <span>💬 54</span>
+        </div>
+        <a href="./articles/common-tajweed-mistakes.html" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae" alt="Noorani Qaida">
+        <span class="category-badge">Beginners</span>
+      </div>
+      <div class="article-content">
+        <h3>Best Noorani Qaida Apps and Resources in 2026</h3>
+        <div class="article-meta">Ustadh Ali • January 5, 2026 • 5 min read</div>
+        <p>Top digital tools and traditional methods to master basics for new learners this year.</p>
+        <div class="stats">
+          <span>❤️ 198</span>
+          <span>💬 32</span>
+        </div>
+        <a href="./articles/noorani-qaida-resources.html" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Quranic Arabic">
+        <span class="category-badge">Arabic</span>
+      </div>
+      <div class="article-content">
+        <h3>Quick Daily Arabic Words from the Quran to Learn in 2026</h3>
+        <div class="article-meta">Sheikh Rahman • December 20, 2025 • 7 min read</div>
+        <p>Build your Quranic vocabulary gradually with high-frequency words and their meanings.</p>
+        <div class="stats">
+          <span>❤️ 456</span>
+          <span>💬 78</span>
+        </div>
+        <a href="./articles/quranic-arabic-words.html" class="read-btn">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Islamic Knowledge & Guidance</h4>
+      <p>Learn Quran Online with Proper Tajweed, Hifz & Understanding</p>
+      <p>Email: tajweedulquranofficial@outlook.com</p>
+      <p>WhatsApp: +92 331 5242744</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="blog.html">Blogs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>Our Courses</h4>
+      <a href="quran-recitation.html">Quran Recitation</a>
+      <a href="tajweed-mastery.html">Tajweed Mastery</a>
+      <a href="quran-memorization.html">Quran Memorization</a>
+      <a href="arabic-language.html">Arabic Language</a>
+      <a href="noorani-qaida.html">Noorani Qaida</a>
+      <a href="quran-tafseer.html">Quran Tafseer</a>
+      <a href="islamic-studies.html">Islamic Studies</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tajweed-ul-Quran. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.querySelector('.search-bar input');
+  const featuredArticle = document.querySelector('.featured-article');
+  const articleCards = document.querySelectorAll('.article-card');
+  const moreArticlesHeading = document.querySelector('h2');
+
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase().trim();
+    let hasVisibleArticles = false;
+
+    // Filter featured article
+    const featuredTitle = featuredArticle.querySelector('h3').textContent.toLowerCase();
+    const featuredContent = featuredArticle.querySelector('p').textContent.toLowerCase();
+    if (featuredTitle.includes(searchTerm) || featuredContent.includes(searchTerm) || searchTerm === '') {
+      featuredArticle.style.display = 'block';
+    } else {
+      featuredArticle.style.display = 'none';
+    }
+
+    // Filter article cards
+    articleCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const content = card.querySelector('p').textContent.toLowerCase();
+      if (title.includes(searchTerm) || content.includes(searchTerm) || searchTerm === '') {
+        card.style.display = 'block';
+        hasVisibleArticles = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Show/hide "More Articles" heading
+    if (hasVisibleArticles || searchTerm === '') {
+      moreArticlesHeading.style.display = 'block';
+    } else {
+      moreArticlesHeading.style.display = 'none';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+

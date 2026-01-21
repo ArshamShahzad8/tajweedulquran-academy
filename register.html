@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admission</title>
+<style>
+body{font-family:Arial}
+header,footer{background:#0b5e3c;color:white;text-align:center;padding:15px}
+form{width:300px;margin:auto}
+input,select,button{width:100%;padding:10px;margin:10px 0}
+</style>
+
+<script>
+function submitForm(){
+alert("Admission Submitted Successfully");
+}
+</script>
+</head>
+
+<body>
+
+<header><h1>Admission Form</h1></header>
+
+<form onsubmit="submitForm();return false;">
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<select>
+<option>Nazra</option>
+<option>Hifz</option>
+<option>Tajweed</option>
+<option>Tafseer</option>
+</select>
+<button type="submit">Submit</button>
+</form>
+
+<footer>© Tajweed-ul-Quran</footer>
+
+</body>
+</html>
+
+
+
+
+
