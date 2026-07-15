@@ -173,125 +173,81 @@
       color: var(--primary-dark);
     }
 
-    /* ================= FORM & MAP SECTION ================= */
-    .contact-main {
+    /* ================= WHATSAPP SECTION ================= */
+    .whatsapp-section {
       padding: 5rem 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 1300px;
-      margin: auto;
-    }
-    @media (max-width: 992px) {
-      .contact-main {
-        grid-template-columns: 1fr;
-      }
-    }
-    .contact-form {
-      background: white;
-      padding: 3rem;
-      border-radius: 1.2rem;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-    .contact-form::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 1.2rem 1.2rem 0 0;
-    }
-    .contact-form h2 {
-      color: var(--primary);
-      margin-bottom: 2.5rem;
+      background: var(--white);
       text-align: center;
-      font-size: 2rem;
     }
-    .form-group {
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--dark-text);
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 1rem 1.2rem 1rem 3rem;
-      border: 2px solid #e2e8f0;
-      border-radius: 0.8rem;
-      font-size: 1rem;
-      outline: none;
-      transition: var(--transition);
-      background: var(--light-bg);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(47,91,159,0.1);
+    .whatsapp-card {
       background: white;
-    }
-    .form-group textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-    .form-group i {
-      position: absolute;
-      left: 1rem;
-      top: 2.8rem;
-      color: var(--gray-text);
-      font-size: 1.1rem;
-      transition: var(--transition);
-    }
-    .form-group input:focus + i,
-    .form-group textarea:focus + i {
-      color: var(--primary);
-    }
-    .submit-btn {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      border: none;
-      padding: 1.2rem 3rem;
-      border-radius: 999px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      width: 100%;
-      margin-top: 1rem;
+      border-radius: 1.5rem;
+      padding: 4rem 3rem;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
-    .submit-btn::before {
+    .whatsapp-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #25D366, #128C7E);
+    }
+    .whatsapp-icon-wrap {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.8rem;
+      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+    }
+    .whatsapp-icon-wrap i {
+      font-size: 2.6rem;
+      color: white;
+    }
+    .whatsapp-card h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .whatsapp-card p {
+      color: var(--gray-text);
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.8;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
       transition: var(--transition);
+      box-shadow: 0 6px 20px rgba(37,211,102,0.3);
     }
-    .submit-btn:hover::before {
-      left: 100%;
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(37,211,102,0.4);
     }
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(47,91,159,0.3);
+    .whatsapp-btn i {
+      font-size: 1.3rem;
     }
-
-    .map-section iframe {
-      width: 100%;
-      height: 450px;
-      border: none;
-      border-radius: 1.2rem;
-      box-shadow: var(--shadow);
+    .whatsapp-note {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--gray-text);
     }
 
     /* ================= FAQs ================= */
@@ -371,19 +327,8 @@
       .contact-hero h1 {
         font-size: 2.4rem;
       }
-      .contact-form {
-        padding: 2rem;
-      }
-      .form-group input,
-      .form-group textarea {
-        padding: 0.9rem 1rem 0.9rem 2.8rem;
-      }
-      .form-group i {
-        left: 0.8rem;
-        top: 2.6rem;
-      }
-      .contact-main {
-        gap: 2rem;
+      .whatsapp-card {
+        padding: 2.5rem 1.5rem;
       }
     }
   </style>
@@ -429,8 +374,8 @@
     </div>
     <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Phone Support</h3>
     <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">
-      <a href="tel:+923315242744" style="color: var(--primary); text-decoration: none;">
-        +92 331 5242744
+      <a href="tel:+923315055667" style="color: var(--primary); text-decoration: none;">
+        +92 331 5055667
       </a>
     </p>
     <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Mon-Fri, 7 AM - 5 PM PST</p>
@@ -445,45 +390,19 @@
   </div>
 </section>
 
-<!-- Form + Map -->
-<section class="contact-main">
-  <div class="contact-form">
-    <h2>Send us a Message</h2>
-    <form name="contact" method="POST" data-netlify="true">
-      <div class="form-group">
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-        <i class="fas fa-user"></i>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com">
-        <i class="fas fa-envelope"></i>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" required placeholder="+92 331 5055667">
-        <i class="fas fa-phone"></i>
-      </div>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="What's this about?">
-        <i class="fas fa-tag"></i>
-      </div>
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Tell us about your learning goals, experience level, or any specific questions..."></textarea>
-        <i class="fas fa-comment" style="top: 3rem;"></i>
-      </div>
-      <button type="submit" class="submit-btn">
-        <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
-        Send Message
-      </button>
-    </form>
-  </div>
-
-  <div class="map-section">
-    <img src="lang.webp" alt="Quran Tafseer" style="width: 100%; height: 450px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+<!-- WhatsApp Contact Section -->
+<section class="whatsapp-section">
+  <div class="whatsapp-card">
+    <div class="whatsapp-icon-wrap">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <h2>Contact Us on WhatsApp</h2>
+    <p>Have questions about our courses? Contact us directly on WhatsApp and we'll get back to you promptly, In sha Allah.</p>
+    <a href="https://wa.me/923315055667" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+      Chat on WhatsApp
+    </a>
+    <p class="whatsapp-note">Available Mon–Sat &bull; 7:00 AM – 9:00 PM PKT</p>
   </div>
 </section>
 
@@ -493,7 +412,7 @@
   
   <div class="faq-item">
     <div class="faq-question">How do I get started?</div>
-    <div class="faq-answer">Simply fill out the contact form above, and our team will get in touch within 24 hours to discuss your needs and schedule a free trial class if interested.</div>
+    <div class="faq-answer">Simply message us on WhatsApp using the button above, and our team will get in touch to discuss your needs and schedule a free trial class, In sha Allah.</div>
   </div>
   
   <div class="faq-item">
@@ -519,7 +438,7 @@
       <h4>Tajweed-ul-Quran</h4>
       <p>Learn Quran Online with Proper Tajweed & Understanding</p>
       <p>Email: tajweedulquranofficial@outlook.com</p>
-      <p>WhatsApp: +92 331 5242744</p>
+      <p>WhatsApp: +92 331 5055667</p>
     </div>
 
     <div>

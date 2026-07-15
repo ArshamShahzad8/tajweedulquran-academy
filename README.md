@@ -1,83 +1,57 @@
-# Tajweed-ul-Quran
+# Tajweed ul Quran Academy
 
-## 📖 Online Platform for Learning Quran with Tajweed
+A modern, responsive website developed for **Tajweed ul Quran Academy** to provide an engaging online presence for Quranic education. The platform showcases the academy's courses, learning methodology, educational resources, and contact information through a clean and accessible user interface.
 
-An interactive online learning platform dedicated to teaching Quran recitation with proper Tajweed rules. Our comprehensive courses cover everything from beginner-level Noorani Qaida to advanced Tajweed mastery, Quran memorization (Hifz), and Arabic language studies.
+## Overview
 
-### ✨ Features
+This project was designed with a strong focus on user experience, responsive design, and performance. It enables prospective students to explore the academy's offerings, learn about Quranic education programs, and connect with the academy through an intuitive interface.
 
-- **Comprehensive Courses**: Quran Recitation, Tajweed Mastery, Quran Memorization (Hifz), Arabic Language, Noorani Qaida, Quran Tafseer, Islamic Studies
-- **Interactive Learning**: Live classes via Zoom, Microsoft Teams, and Skype
-- **Rich Content**: Tajweed rules, recitation guides, audio examples, and video tutorials
-- **Blog & Resources**: Educational articles on Quranic studies, Tajweed tips, and Islamic knowledge
-- **Contact System**: Integrated contact form for inquiries and trial requests
-- **Responsive Design**: Mobile-friendly interface for learning on any device
+## Features
 
-### 🚀 Live Demo
+* Responsive design for desktop, tablet, and mobile devices
+* Modern and accessible user interface
+* Course and program showcase
+* Educational blog and resources
+* Contact and inquiry form
+* Optimized performance and clean navigation
 
-Visit our live website: [Your Netlify/Vercel URL here]
+## Tech Stack
 
-### 🛠️ Technologies Used
+* HTML5
+* CSS3
+* JavaScript
+* Font Awesome
+* Google Fonts
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Styling**: Custom CSS with modern design principles
-- **Icons**: Font Awesome
-- **Fonts**: Google Fonts (Amiri & Poppins)
-- **Hosting**: Netlify (with built-in form handling)
-- **Version Control**: Git & GitHub
+## Project Structure
 
-### 📋 Prerequisites
+```text
+├── index.html
+├── css/
+├── js/
+├── images/
+├── assets/
+└── README.md
+```
 
-- Modern web browser
-- Internet connection for live classes
-- Zoom/Microsoft Teams/Skype account for interactive sessions
+## Deployment
 
-### 🔧 Installation & Deployment
+The project is deployed using **Vercel** and can be easily hosted on any static hosting platform such as GitHub Pages or Netlify.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/tajweed-ul-quran.git
-   cd tajweed-ul-quran
-   ```
+## Purpose
 
-2. **Deploy to Netlify**
-   - Sign up at [Netlify](https://netlify.com)
-   - Connect your GitHub repository
-   - Deploy automatically (no build required for static site)
+The goal of this project is to provide Tajweed ul Quran Academy with a professional digital presence that reflects its mission of delivering quality Quranic education through a modern and user-friendly website.
 
-3. **Alternative Deployment Options**
-   - **Vercel**: Connect GitHub repo and deploy
-   - **GitHub Pages**: Enable Pages in repository settings
-   - **Firebase**: Use Firebase Hosting
+## Preview
 
-### 📱 Usage
+Add your live website link here after deployment.
 
-- **Browse Courses**: Explore our comprehensive Quran learning courses
-- **Read Articles**: Access educational content in our blog section
-- **Contact Us**: Use the contact form for inquiries or to start a free trial
-- **Search**: Use the blog search feature to find specific articles
+## Author
 
-### 📞 Contact Information
+**Aarsham Shahzad**
 
-- **Email**: tajweedulquranofficial@outlook.com
-- **WhatsApp**: +92 331 5242744
-- **Location**: Street 2, House 6, Block D, Dhok Chaudhrian, Rawalpindi
-
-### 🤝 Contributing
-
-We welcome contributions! Please feel free to submit issues, feature requests, or pull requests.
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 🙏 Acknowledgments
-
-- Thanks to all our students and teachers
-- Inspired by the noble pursuit of Quranic knowledge
-- Built with dedication to proper Tajweed and Islamic education
+Software Engineering Student • Flutter Developer • UI/UX Designer
 
 ---
 
-**Note**: This is a static website. For advanced features like user accounts or payment processing, additional backend development would be required.</content>
-<parameter name="filePath">d:\Academy\README.md
+*This repository contains the source code for the official Tajweed ul Quran Academy website.*
