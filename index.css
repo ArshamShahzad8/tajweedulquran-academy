@@ -2744,11 +2744,19 @@ footer {
 
   .course-detail .curriculum {
     line-height: 1.55 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-bottom: 1.25rem !important;
   }
 
   .course-detail .curriculum li {
     padding-top: 0.58rem !important;
     padding-bottom: 0.58rem !important;
+  }
+
+  .course-detail .course-content {
+    overflow: visible !important;
+    margin-bottom: 1.25rem !important;
   }
 
   footer[style] {
