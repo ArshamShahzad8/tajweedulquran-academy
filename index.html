@@ -1,833 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Tajweed-ul-Quran - Learn Quran Online with Tajweed, Hifz & Arabic"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tajweed-ul-Quran - Learn Quran Online with Tajweed, Hifz & Arabic" />
   <title>Tajweed-ul-Quran - Learn Quran Online</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: rgb(47, 91, 159);
-      --primary-dark: rgb(35, 70, 130);
-      --accent: #f59e0b;
-      --light-bg: #f8fafc;
-      --gray-bg: #f1f5f9;
-      --dark-text: #0f172a;
-      --gray-text: #64748b;
-      --white: #ffffff;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --transition: all 0.4s ease;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--dark-text);
-      line-height: 1.7;
-      background: var(--white);
-    }
-    h1, h2, h3 { font-family: 'Amiri', serif; }
-
-    /* ================= NAVBAR ================= */
-    header {
-      position: fixed;
-      top: 0; width: 100%;
-      background: white;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    nav {
-      max-width: 1400px;
-      margin: auto;
-      padding: 1.2rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--primary);
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-    .logo img {
-      width: 55px;
-      height: 55px;
-      border-radius: 60%;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      align-items: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
-    .nav-links a.active {
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-    .btn-start {
-      background: var(--accent);
-      color: white;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      min-height: 90vh;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 8rem 5% 6rem;
-      display: flex;
-      align-items: center;
-    }
-    .hero .container {
-      max-width: 1400px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-    .hero-left h1 {
-      font-size: 3.6rem;
-      line-height: 1.2;
-    }
-    .hero-left span { color: var(--accent); }
-    .trust-badge {
-      background: rgba(255,255,255,0.15);
-      padding: 0.5rem 1.1rem;
-      border-radius: 999px;
-      margin-bottom: 1.2rem;
-      display: inline-block;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-    .btn-outline {
-      border: 2px solid white;
-      color: white;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .btn-outline:hover {
-      background: white;
-      color: var(--primary);
-    }
-
-    .hero-right img {
-      width: 100%;
-      border-radius: 1.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    /* ================= COURSES ================= */
-    .courses {
-      padding: 6rem 5%;
-      background: white;
-      text-align: center;
-    }
-    .courses h2 {
-      font-size: 2.8rem;
-      color: var(--dark-text);
-    }
-    .courses .subtitle {
-      color: var(--gray-text);
-      margin: 1rem 0 4rem;
-    }
-    .course-grid {
-      max-width: 1300px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
-    }
-    .course-card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
-      text-align: left;
-    }
-    .course-img {
-      position: relative;
-      margin-bottom: 1rem;
-    }
-    .course-img img {
-      width: 100%;
-      border-radius: 0.8rem;
-      height: 180px;
-      object-fit: cover;
-    }
-    .badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: var(--accent);
-      color: white;
-      font-size: 0.75rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-    }
-    .course-card h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .course-card p {
-      font-size: 0.9rem;
-      color: var(--gray-text);
-      margin-bottom: 1rem;
-    }
-    .course-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      color: var(--gray-text);
-    }
-    .course-btn {
-      display: block;
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .view-all {
-      margin-top: 3rem;
-    }
-    .view-all a {
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      padding: 0.6rem 1.6rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    /* What You Get Section */
-    .benefits {
-      padding: 6rem 5%;
-      background: var(--light-bg);
-      text-align: center;
-    }
-
-    .benefits-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .benefit-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 2.5rem 1.5rem;
-      box-shadow: var(--shadow);
-    }
-
-    .benefit-icon img {
-      width: 60px;
-      margin-bottom: 1.2rem;
-    }
-
-    /* Teachers Section */
-.teachers {
-  padding: 6rem 5%;
-  background: var(--gray-bg);
-  text-align: center;
-}
-.teachers h2 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
-}
-.teachers p.subtitle {
-  color: var(--gray-text);
-  margin-bottom: 4rem;
-  font-size: 1.15rem;
-}
-.teacher-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.teacher-card {
-  background: var(--white);
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-.teacher-card:hover {
-  transform: translateY(-8px);
-}
-.teacher-icon {
-  width: 90px;
-  height: 90px;
-  background: transparent;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.2rem;
-  box-shadow: 0 6px 15px rgba(47,91,159,0.25);
-}
-.teacher-icon img {
-  width: 65px;
-}
-.teacher-name {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-.teacher-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  font-size: 0.95rem;
-  color: var(--gray-text);
-}
-.teacher-info span {
-  background: rgba(47,91,159,0.08);
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-}
-
-/* Testimonials */
-.testimonials {
-  padding: 6rem 5%;
-  background: var(--white);
-  text-align: center;
-}
-.testimonials h2 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
-}
-.testimonials p.subtitle {
-  color: var(--gray-text);
-  margin-bottom: 4rem;
-  font-size: 1.15rem;
-}
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.testimonial-card {
-  background: var(--light-bg);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  text-align: left;
-}
-.stars {
-  color: #fbbf24;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-.testimonial-card p {
-  font-style: italic;
-  color: var(--gray-text);
-  margin-bottom: 1.2rem;
-}
-.testimonial-author {
-  font-weight: 600;
-  color: var(--primary);
-}
-
-/* Footer */
-footer {
-  background: var(--primary);
-  color: white;
-  padding: 4rem 5% 2rem;
-  text-align: center;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-}
-.footer-grid h4 {
-  font-size: 1.3rem;
-  margin-bottom: 1.2rem;
-}
-.footer-grid a {
-  color: rgba(255,255,255,0.9);
-  display: block;
-  margin: 0.6rem 0;
-  text-decoration: none;
-}
-.footer-grid a:hover {
-  color: var(--accent);
-}
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.15);
-  padding-top: 2rem;
-  font-size: 0.95rem;
-}
-/* ===== Horizontal Moving Courses ===== */
-.course-wrapper {
-  overflow: hidden;
-  position: relative;
-}
-
-.course-grid {
-  display: flex;
-  gap: 2.5rem;
-  animation: scrollCourses 15s linear infinite;
-}
-
-.course-card {
-  min-width: 280px;
-  flex-shrink: 0;
-}
-
-@keyframes scrollCourses {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pause animation on hover */
-.course-wrapper:hover .course-grid {
-  animation-play-state: paused;
-}
-
-
-    /* ================= RESPONSIVE ================= */
-    @media(max-width: 900px){
-      .hero .container { grid-template-columns: 1fr; text-align: center; }
-      .hero-buttons { justify-content: center; flex-wrap: wrap; }
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="blog.html">Blogs</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="btn-start">Start Free Trial</a>
-    </div>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <div class="hero-left">
-      <div class="trust-badge">Trusted by 50+ Students Worldwide</div>
-      <h1>Learn the Quran <span>Anytime, Anywhere</span></h1>
-      <p>Learn Quran recitation, Tajweed, Hifz, and Arabic with certified teachers.</p>
-      <div class="hero-buttons">
+  <header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <nav>
+      <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+      <label for="nav-toggle" class="hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <label for="nav-toggle" class="nav-overlay" aria-label="Close navigation menu"></label>
+      <div class="nav-links">
+        <label for="nav-toggle" class="menu-close" aria-label="Close navigation menu">&times;</label>
+        <a href="index.html" class="active">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="blog.html">Blogs</a>
+        <a href="contact.html">Contact</a>
         <a href="contact.html" class="btn-start">Start Free Trial</a>
-        <a href="courses.html" class="btn-outline">Explore Courses</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-left">
+        <div class="trust-badge">Trusted by 50+ Students Worldwide</div>
+        <h1>Learn the Quran <span>Anytime, Anywhere</span></h1>
+        <p>Learn Quran recitation, Tajweed, Hifz, and Arabic with certified teachers.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn-start">Start Free Trial</a>
+          <a href="courses.html" class="btn-outline">Explore Courses</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae" alt="Quran">
       </div>
     </div>
-    <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae" alt="Quran">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="courses">
-  <h2>Our Quran Courses</h2>
-  <p class="subtitle">Comprehensive online Quran courses designed for students of all ages</p>
+  <section class="courses">
+    <h2>Our Quran Courses</h2>
+    <p class="subtitle">Comprehensive online Quran courses designed for students of all ages</p>
 
-  <div class="course-wrapper">
-    <div class="course-grid">
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">All Levels</span>
-          <img src="online.jpg">
+    <div class="course-wrapper">
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">All Levels</span>
+            <img src="online.jpg">
+          </div>
+          <h3>Quran Recitation</h3>
+          <p>Learn proper Quran recitation with expert guidance.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>14</span>
+          </div>
+          <a href="quran-recitation.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Quran Recitation</h3>
-        <p>Learn proper Quran recitation with expert guidance.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 50</span>
-        </div>
-        <a href="quran-recitation.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Intermediate</span>
-          <img src="quran1.jpg">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Intermediate</span>
+            <img src="quran1.jpg">
+          </div>
+          <h3>Tajweed Mastery</h3>
+          <p>Master Tajweed rules and pronunciation.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>8</span>
+          </div>
+          <a href="tajweed-mastery.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Tajweed Mastery</h3>
-        <p>Master Tajweed rules and pronunciation.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 13</span>
-        </div>
-        <a href="tajweed-mastery.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">All Levels</span>
-          <img src="memorization.jpg">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">All Levels</span>
+            <img src="memorization.jpg">
+          </div>
+          <h3>Quran Memorization (Hifz)</h3>
+          <p>Structured Hifz program with revision plans.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>11</span>
+          </div>
+          <a href="quran-memorization.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Quran Memorization (Hifz)</h3>
-        <p>Structured Hifz program with revision plans.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 27</span>
-        </div>
-        <a href="quran-memorization.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Beginner</span>
-          <img src="quran.jpg">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Beginner</span>
+            <img src="quran.jpg">
+          </div>
+          <h3>Arabic Language</h3>
+          <p>Understand Quranic Arabic deeply.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>6</span>
+          </div>
+          <a href="arabic-language.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Arabic Language</h3>
-        <p>Understand Quranic Arabic deeply.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 5 </span>
-        </div>
-        <a href="arabic-language.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Kids</span>
-          <img src="memorization.webp">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Kids</span>
+            <img src="memorization.webp">
+          </div>
+          <h3>Noorani Qaida</h3>
+          <p>Perfect starting course for children and beginners.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>7</span>
+          </div>
+          <a href="noorani-qaida.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Noorani Qaida</h3>
-        <p>Perfect starting course for children and beginners.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 9</span>
-        </div>
-        <a href="noorani-qaida.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Advanced</span>
-          <img src="lang.webp">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Advanced</span>
+            <img src="lang.webp">
+          </div>
+          <h3>Quran Tafseer</h3>
+          <p>Understand Quran meanings with authentic explanations.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>4</span>
+          </div>
+          <a href="quran-tafseer.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Quran Tafseer</h3>
-        <p>Understand Quran meanings with authentic explanations.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 10</span>
-        </div>
-        <a href="quran-tafseer.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Adults</span>
-          <img src="https://images.unsplash.com/photo-1590080876477-2b6f1b90c2f3">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Adults</span>
+            <img src="language.jpg" alt="Islamic Studies">
+          </div>
+          <h3>Islamic Studies</h3>
+          <p>Learn essential Islamic knowledge alongside Quran.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>4</span>
+          </div>
+          <a href="islamic-studies.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Islamic Studies</h3>
-        <p>Learn essential Islamic knowledge alongside Quran.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 9</span>
+
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">All Levels</span>
+            <img src="online.jpg">
+          </div>
+          <h3>Quran Recitation</h3>
+          <p>Learn proper Quran recitation with expert guidance.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>14</span>
+          </div>
+          <a href="quran-recitation.html" class="course-btn">Learn More</a>
         </div>
-        <a href="islamic-studies.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">All Levels</span>
-          <img src="online.jpg">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Intermediate</span>
+            <img src="quran1.jpg">
+          </div>
+          <h3>Tajweed Mastery</h3>
+          <p>Master Tajweed rules and pronunciation.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>8</span>
+          </div>
+          <a href="tajweed-mastery.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Quran Recitation</h3>
-        <p>Learn proper Quran recitation with expert guidance.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 50</span>
+
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">All Levels</span>
+            <img src="memorization.jpg">
+          </div>
+          <h3>Quran Memorization (Hifz)</h3>
+          <p>Structured Hifz program with revision plans.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>11</span>
+          </div>
+          <a href="quran-memorization.html" class="course-btn">Learn More</a>
         </div>
-        <a href="quran-recitation.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Intermediate</span>
-          <img src="quran1.jpg">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Beginner</span>
+            <img src="quran.jpg">
+          </div>
+          <h3>Arabic Language</h3>
+          <p>Understand Quranic Arabic deeply.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>6</span>
+          </div>
+          <a href="arabic-language.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Tajweed Mastery</h3>
-        <p>Master Tajweed rules and pronunciation.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 13</span>
+
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Kids</span>
+            <img src="memorization.webp">
+          </div>
+          <h3>Noorani Qaida</h3>
+          <p>Perfect starting course for children and beginners.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>7</span>
+          </div>
+          <a href="noorani-qaida.html" class="course-btn">Learn More</a>
         </div>
-        <a href="tajweed-mastery.html" class="course-btn">Learn More</a>
-      </div>
 
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">All Levels</span>
-          <img src="memorization.jpg">
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Advanced</span>
+            <img src="lang.webp">
+          </div>
+          <h3>Quran Tafseer</h3>
+          <p>Understand Quran meanings with authentic explanations.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>4</span>
+          </div>
+          <a href="quran-tafseer.html" class="course-btn">Learn More</a>
         </div>
-        <h3>Quran Memorization (Hifz)</h3>
-        <p>Structured Hifz program with revision plans.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 27</span>
+
+        <div class="course-card">
+          <div class="course-img">
+            <span class="badge">Adults</span>
+            <img src="language.jpg" alt="Islamic Studies">
+          </div>
+          <h3>Islamic Studies</h3>
+          <p>Learn essential Islamic knowledge alongside Quran.</p>
+          <div class="course-meta">
+            <span><strong class="mobile-student-label">Students Enrolled:</strong><span class="desktop-student-label">Students </span>4</span>
+          </div>
+          <a href="islamic-studies.html" class="course-btn">Learn More</a>
         </div>
-        <a href="quran-memorization.html" class="course-btn">Learn More</a>
-      </div>
-
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Beginner</span>
-          <img src="quran.jpg">
-        </div>
-        <h3>Arabic Language</h3>
-        <p>Understand Quranic Arabic deeply.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 5 </span>
-        </div>
-        <a href="arabic-language.html" class="course-btn">Learn More</a>
-      </div>
-
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Kids</span>
-          <img src="memorization.webp">
-        </div>
-        <h3>Noorani Qaida</h3>
-        <p>Perfect starting course for children and beginners.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 9</span>
-        </div>
-        <a href="noorani-qaida.html" class="course-btn">Learn More</a>
-      </div>
-
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Advanced</span>
-          <img src="lang.webp">
-        </div>
-        <h3>Quran Tafseer</h3>
-        <p>Understand Quran meanings with authentic explanations.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 10</span>
-        </div>
-        <a href="quran-tafseer.html" class="course-btn">Learn More</a>
-      </div>
-
-      <div class="course-card">
-        <div class="course-img">
-          <span class="badge">Adults</span>
-          <img src="https://images.unsplash.com/photo-1590080876477-2b6f1b90c2f3">
-        </div>
-        <h3>Islamic Studies</h3>
-        <p>Learn essential Islamic knowledge alongside Quran.</p>
-        <div class="course-meta">
-          <span>👨‍🎓 9</span>
-        </div>
-        <a href="islamic-studies.html" class="course-btn">Learn More</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="view-all">
-    <a href="courses.html">View All Courses</a>
-  </div>
-</section>
-
-<!-- What You'll Get Section -->
-<section class="benefits">
-  <h2>What You'll Get</h2>
-  <div class="benefits-grid">
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Expert Teachers">
-      </div>
-      <h3>Expert Teachers</h3>
-      <p>Learn from certified scholars with years of experience</p>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Live Classes">
-      </div>
-      <h3>Live Classes</h3>
-      <p>Interactive sessions with real-time feedback</p>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Certification">
-      </div>
-      <h3>Affordable Fee</h3>
-      <p>Adjustment the best affordable fee</p>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827347.png" alt="Flexible Schedule">
-      </div>
-      <h3>Flexible Schedule</h3>
-      <p>Learn at your own pace, anytime</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- Teachers Section -->
-<section class="teachers">
-  <h2>Our Expert Teachers</h2>
-  <p class="subtitle">
-    Learn from certified scholars and experienced instructors dedicated to your Quranic education
-  </p>
-
-  <div class="teacher-grid">
-    <div class="teacher-card">
-      <div class="teacher-icon">
-        <img src="scholar.png" alt="Scholar">
-      </div>
-      <div class="teacher-name">Ustadha Robina Shahzad</div>
-      <div class="teacher-info">
-        <span>8+ Years Experience</span>
-        <span>25+ Students Taught</span>
       </div>
     </div>
 
-    <div class="teacher-card">
-      <div class="teacher-icon">
-        <img src="scholar.png" alt="Scholar">
+    <div class="view-all">
+      <a href="courses.html">View All Courses</a>
+    </div>
+  </section>
+
+  <!-- What You'll Get Section -->
+  <section class="benefits">
+    <h2>What You'll Get</h2>
+    <div class="benefits-mobile-frame">
+      <button class="benefit-arrow benefit-prev" type="button" aria-label="Previous benefit">&#8249;</button>
+      <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Expert Teachers">
+        </div>
+        <h3>Expert Teachers</h3>
+        <p>Learn from certified scholars with years of experience</p>
       </div>
-      <div class="teacher-name">Ustadha Sania Javed</div>
-      <div class="teacher-info">
-        <span>5+ Years Experience</span>
-        <span>15+ Students Taught</span>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Live Classes">
+        </div>
+        <h3>Live Classes</h3>
+        <p>Interactive sessions with real-time feedback</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Certification">
+        </div>
+        <h3>Affordable Fee</h3>
+        <p>Adjustment the best affordable fee</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1827/1827347.png" alt="Flexible Schedule">
+        </div>
+        <h3>Flexible Schedule</h3>
+        <p>Learn at your own pace, anytime</p>
+      </div>
+
+      </div>
+      <button class="benefit-arrow benefit-next" type="button" aria-label="Next benefit">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- Teachers Section -->
+  <section class="teachers">
+    <h2>Our Expert Teachers</h2>
+    <p class="subtitle">
+      Learn from certified scholars and experienced instructors dedicated to your Quranic education
+    </p>
+
+    <div class="teacher-grid">
+      <div class="teacher-card">
+        <div class="teacher-icon">
+          <img src="scholar.png" alt="Scholar">
+        </div>
+        <div class="teacher-name">Ustadha Robina Shahzad</div>
+        <div class="teacher-info">
+          <span>8+ Years Experience</span>
+          <span>25+ Students Taught</span>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <div class="teacher-icon">
+          <img src="scholar.png" alt="Scholar">
+        </div>
+        <div class="teacher-name">Ustadha Sania Javed</div>
+        <div class="teacher-info">
+          <span>5+ Years Experience</span>
+          <span>15+ Students Taught</span>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <div class="teacher-icon">
+          <img src="scholar.png" alt="Scholar">
+        </div>
+        <div class="teacher-name">Ustadha Wareesha</div>
+        <div class="teacher-info">
+          <span>7+ Years Experience</span>
+          <span>10+ Students Taught</span>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <div class="teacher-icon">
+          <img src="scholar.png" alt="Scholar">
+        </div>
+        <div class="teacher-name">Qari Atif</div>
+        <div class="teacher-info">
+          <span>3+ Years Experience</span>
+          <span>7+ Students Taught</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="teacher-card">
-      <div class="teacher-icon">
-        <img src="scholar.png" alt="Scholar">
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Student Testimonials</h2>
+    <p class="subtitle">
+      Hear from our students about their journey learning the Quran
+    </p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>
+          "The Quran recitation course has transformed my connection with the Quran.
+          The teachers are incredibly patient and knowledgeable."
+        </p>
+        <div class="testimonial-author">Sarah Ahmed, United States</div>
       </div>
-      <div class="teacher-name">Ustadha Wareesha</div>
-      <div class="teacher-info">
-        <span>7+ Years Experience</span>
-        <span>10+ Students Taught</span>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>
+          "I completed my Hifz program here and the structured approach made it so much easier.
+          Highly recommend to everyone!"
+        </p>
+        <div class="testimonial-author">Mohammed Ali, United Kingdom</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>
+          "Learning Arabic has helped me understand the Quran better.
+          The interactive lessons are engaging and effective."
+        </p>
+        <div class="testimonial-author">Aisha Khan, Canada</div>
       </div>
     </div>
+  </section>
 
-    <div class="teacher-card">
-      <div class="teacher-icon">
-        <img src="scholar.png" alt="Scholar">
-      </div>
-      <div class="teacher-name">Qari Atif</div>
-      <div class="teacher-info">
-        <span>3+ Years Experience</span>
-        <span>7+ Students Taught</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Testimonials -->
-<section class="testimonials">
-  <h2>Student Testimonials</h2>
-  <p class="subtitle">
-    Hear from our students about their journey learning the Quran
-  </p>
+  <!-- Footer -->
+  <footer style="background: #0a3d62; color: white; padding: 50px 20px 20px; font-family: Arial, sans-serif;">
 
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>
-        "The Quran recitation course has transformed my connection with the Quran.
-        The teachers are incredibly patient and knowledgeable."
-      </p>
-      <div class="testimonial-author">Sarah Ahmed, United States</div>
+    <!-- Tajweed-ul-Quran Info on Top -->
+    <div style="text-align: center; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h3 style="font-size: 24px; margin-bottom: 12px;">Tajweed-ul-Quran</h3>
+      <p style="margin-bottom: 10px; opacity: 0.95;">Learn Quran Online with Proper Tajweed & Understanding</p>
+      <p><strong>Email:</strong> tajweedulquranofficial@outlook.com</p>
+      <p><strong>WhatsApp:</strong> +92 331 5055667</p>
     </div>
 
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>
-        "I completed my Hifz program here and the structured approach made it so much easier.
-        Highly recommend to everyone!"
-      </p>
-      <div class="testimonial-author">Mohammed Ali, United Kingdom</div>
+    <!-- Two Columns: Quick Links and Our Courses -->
+    <div
+      style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; justify-content: center;">
     </div>
 
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p>
-        "Learning Arabic has helped me understand the Quran better.
-        The interactive lessons are engaging and effective."
-      </p>
-      <div class="testimonial-author">Aisha Khan, Canada</div>
+    <!-- Footer Bottom -->
+    <div
+      style="text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px; opacity: 0.85;">
+      © 2026 Tajweed-ul-Quran. All Rights Reserved.
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h4>Tajweed-ul-Quran</h4>
-      <p>Learn Quran Online with Proper Tajweed, Hifz & Arabic</p>
-      <p>Email: tajweedulquranofficial@outlook.com</p>
-      <p>WhatsApp: +92 331 5055667</p>
-    </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileQuery = window.matchMedia('(max-width: 768px)');
+      const courseWrapper = document.querySelector('.courses > .course-wrapper');
+      const benefitsGrid = document.querySelector('.benefits-grid');
+      const benefitCards = benefitsGrid ? Array.from(benefitsGrid.querySelectorAll('.benefit-card')) : [];
+      const prevBenefit = document.querySelector('.benefit-prev');
+      const nextBenefit = document.querySelector('.benefit-next');
+      let courseTimer;
+      let benefitIndex = 0;
 
-    <div>
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="blog.html">Blogs</a>
-      <a href="contact.html">Contact</a>
-    </div>
+      function scrollBenefit(index) {
+        if (!benefitsGrid || !benefitCards.length) return;
+        benefitIndex = (index + benefitCards.length) % benefitCards.length;
+        benefitsGrid.scrollTo({
+          left: benefitCards[benefitIndex].offsetLeft,
+          behavior: 'smooth'
+        });
+      }
 
-    <div>
-      <h4>Our Courses</h4>
-      <a href="quran-recitation.html">Quran Recitation</a>
-      <a href="tajweed-mastery.html">Tajweed Mastery</a>
-      <a href="quran-memorization.html">Quran Memorization</a>
-      <a href="arabic-language.html">Arabic Language</a>
-      <a href="noorani-qaida.html">Noorani Qaida</a>
-      <a href="quran-tafseer.html">Quran Tafseer</a>
-      <a href="islamic-studies.html">Islamic Studies</a>
-    </div>
-  </div>
+      function setupMobileCourses() {
+        if (!courseWrapper || !mobileQuery.matches) return;
+        clearInterval(courseTimer);
+        courseTimer = setInterval(function () {
+          const cards = courseWrapper.querySelectorAll('.course-card');
+          if (!cards.length) return;
+          const cardWidth = cards[0].getBoundingClientRect().width;
+          const gap = parseFloat(getComputedStyle(courseWrapper.querySelector('.course-grid')).gap) || 0;
+          const step = cardWidth + gap;
+          const resetPoint = step * 7;
 
-  <div class="footer-bottom">
-    © 2026 Tajweed-ul-Quran. All Rights Reserved.
-  </div>
-</footer>
+          if (courseWrapper.scrollLeft >= resetPoint - step * 0.5) {
+            courseWrapper.scrollTo({ left: 0, behavior: 'auto' });
+          } else {
+            courseWrapper.scrollBy({ left: step, behavior: 'smooth' });
+          }
+        }, 2600);
+      }
+
+      if (prevBenefit && nextBenefit) {
+        prevBenefit.addEventListener('click', function () {
+          scrollBenefit(benefitIndex - 1);
+        });
+        nextBenefit.addEventListener('click', function () {
+          scrollBenefit(benefitIndex + 1);
+        });
+      }
+
+      setupMobileCourses();
+      mobileQuery.addEventListener('change', function () {
+        clearInterval(courseTimer);
+        setupMobileCourses();
+        scrollBenefit(0);
+      });
+    });
+  </script>
 
 </body>
+
 </html>
-
-
-
-
-

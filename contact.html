@@ -1,485 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Contact Tajweed-ul-Quran - Get in touch for Quran learning, Tajweed, and online classes"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Contact Tajweed-ul-Quran - Get in touch for Quran learning, Tajweed, and online classes" />
   <title>Contact Us | Tajweed-ul-Quran</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <style>
-    :root {
-      --primary: rgb(47, 91, 159);
-      --primary-dark: rgb(35, 70, 130);
-      --accent: #f59e0b;
-      --light-bg: #f8fafc;
-      --gray-bg: #f1f5f9;
-      --dark-text: #0f172a;
-      --gray-text: #64748b;
-      --white: #ffffff;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --transition: all 0.4s ease;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--dark-text);
-      line-height: 1.7;
-      background: var(--white);
-    }
-    h1, h2, h3 { font-family: 'Amiri', serif; }
-
-    /* ================= NAVBAR ================= */
-    header {
-      position: fixed;
-      top: 0; width: 100%;
-      background: white;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    nav {
-      max-width: 1400px;
-      margin: auto;
-      padding: 1.2rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--primary);
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-    .logo img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      align-items: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
-    .nav-links a.active {
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-    .nav-links a.active {
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-    .btn-start {
-      background: var(--accent);
-      color: white;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    /* ================= CONTACT HERO ================= */
-    .contact-hero {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 9rem 5% 6rem;
-      text-align: center;
-      margin-top: 80px; /* space for fixed navbar */
-    }
-    .contact-hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    .contact-hero p {
-      font-size: 1.25rem;
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0.95;
-    }
-
-    /* ================= CONTACT INFO CARDS ================= */
-    .contact-info {
-      padding: 4rem 5%;
-      background: var(--light-bg);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .info-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    .info-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--accent);
-    }
-    .info-card svg, .info-card i {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      background: rgba(47,91,159,0.1);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-    }
-    .info-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-    .info-card p {
-      color: var(--gray-text);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .info-card a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .info-card a:hover {
-      color: var(--primary-dark);
-    }
-
-    /* ================= WHATSAPP SECTION ================= */
-    .whatsapp-section {
-      padding: 5rem 5%;
-      background: var(--white);
-      text-align: center;
-    }
-    .whatsapp-card {
-      background: white;
-      border-radius: 1.5rem;
-      padding: 4rem 3rem;
-      max-width: 680px;
-      margin: 0 auto;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .whatsapp-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, #25D366, #128C7E);
-    }
-    .whatsapp-icon-wrap {
-      width: 90px;
-      height: 90px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.8rem;
-      box-shadow: 0 8px 25px rgba(37,211,102,0.35);
-    }
-    .whatsapp-icon-wrap i {
-      font-size: 2.6rem;
-      color: white;
-    }
-    .whatsapp-card h2 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .whatsapp-card p {
-      color: var(--gray-text);
-      font-size: 1.1rem;
-      max-width: 480px;
-      margin: 0 auto 2.2rem;
-      line-height: 1.8;
-    }
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 999px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      box-shadow: 0 6px 20px rgba(37,211,102,0.3);
-    }
-    .whatsapp-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(37,211,102,0.4);
-    }
-    .whatsapp-btn i {
-      font-size: 1.3rem;
-    }
-    .whatsapp-note {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: var(--gray-text);
-    }
-
-    /* ================= FAQs ================= */
-    .faqs {
-      padding: 5rem 5%;
-      background: var(--gray-bg);
-    }
-    .faqs h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 3rem;
-      font-size: 2.5rem;
-    }
-    .faq-item {
-      background: white;
-      border-radius: 1rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .faq-question {
-      padding: 1.5rem 2rem;
-      font-weight: 600;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background: #f8fafc;
-      text-align: center;
-    }
-    .faq-answer {
-      padding: 0 2rem 1.5rem;
-      color: var(--gray-text);
-      display: none;
-      text-align: center;
-    }
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: var(--primary);
-      color: white;
-      padding: 4rem 5% 2rem;
-      text-align: center;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 3rem;
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-    }
-    .footer-grid h4 {
-      font-size: 1.3rem;
-      margin-bottom: 1.2rem;
-    }
-    .footer-grid a {
-      color: rgba(255,255,255,0.9);
-      display: block;
-      margin: 0.6rem 0;
-      text-decoration: none;
-    }
-    .footer-grid a:hover {
-      color: var(--accent);
-    }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.15);
-      padding-top: 2rem;
-      font-size: 0.95rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .contact-hero {
-        padding: 7rem 5% 5rem;
-      }
-      .contact-hero h1 {
-        font-size: 2.4rem;
-      }
-      .whatsapp-card {
-        padding: 2.5rem 1.5rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="blog.html">Blogs</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="contact.html" class="btn-start">Start Free Trial</a>
-    </div>
-  </nav>
-</header>
+  <header>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <nav>
+      <div class="logo"><img src="logo.png" alt="Logo"> Tajweed-ul-Quran</div>
+      <label for="nav-toggle" class="hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <label for="nav-toggle" class="nav-overlay" aria-label="Close navigation menu"></label>
+      <div class="nav-links">
+        <label for="nav-toggle" class="menu-close" aria-label="Close navigation menu">&times;</label>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="blog.html">Blogs</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="btn-start">Start Free Trial</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- Contact Hero -->
-<section class="contact-hero">
-  <h1>Get In Touch</h1>
-  <p>Have questions? We're here to help you start your Quranic learning journey.</p>
-</section>
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <h1>Get In Touch</h1>
+    <p>Have questions? We're here to help you start your Quranic learning journey.</p>
+  </section>
 
-<!-- Contact Info Cards -->
-<section class="contact-info">
-  <div class="info-card">
-    <div style="background: rgba(47,91,159,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-      <i class="fas fa-envelope" style="font-size: 1.8rem; color: var(--primary);"></i>
+  <!-- Contact Info Cards -->
+  <section class="contact-info">
+    <div class="info-card">
+      <div class="contact-icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <h3>Email Support</h3>
+      <p class="contact-value">
+        <a href="mailto:tajweedulquranofficial@outlook.com">
+          tajweedulquranofficial@outlook.com
+        </a>
+      </p>
+      <p class="contact-note">Quick response within 24 hours</p>
     </div>
-    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Email Support</h3>
-    <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem;">
-      <a href="mailto:tajweedulquranofficial@outlook.com" style="color: var(--primary); text-decoration: none;">
-        tajweedulquranofficial@outlook.com
+
+    <div class="info-card">
+      <div class="contact-icon">
+        <i class="fas fa-phone"></i>
+      </div>
+      <h3>Phone Support</h3>
+      <p class="contact-value">
+        <a href="tel:+923315055667">
+          +92 331 5055667
+        </a>
+      </p>
+      <p class="contact-note">Mon-Fri, 7 AM - 5 PM PST</p>
+    </div>
+
+    <div class="info-card">
+      <div class="contact-icon">
+        <i class="fas fa-clock"></i>
+      </div>
+      <h3>Business Hours</h3>
+      <p class="contact-value">7:00 AM - 5:00 PM</p>
+      <p class="contact-note">Pakistan Standard Time</p>
+    </div>
+  </section>
+
+  <!-- WhatsApp Contact Section -->
+  <section class="whatsapp-section">
+    <div class="whatsapp-card">
+      <div class="whatsapp-icon-wrap">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <h2>Contact Us on WhatsApp</h2>
+      <p>Have questions about our courses? Contact us directly on WhatsApp and we'll get back to you promptly, In sha
+        Allah.</p>
+      <a href="https://wa.me/923315055667" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        Chat on WhatsApp
       </a>
-    </p>
-    <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Quick response within 24 hours</p>
-  </div>
-  <div class="info-card">
-    <div style="background: rgba(47,91,159,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-      <i class="fas fa-phone" style="font-size: 1.8rem; color: var(--primary);"></i>
+      <p class="whatsapp-note">Available Mon–Sat &bull; 7:00 AM – 9:00 PM PKT</p>
     </div>
-    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Phone Support</h3>
-    <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">
-      <a href="tel:+923315055667" style="color: var(--primary); text-decoration: none;">
-        +92 331 5055667
-      </a>
-    </p>
-    <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Mon-Fri, 7 AM - 5 PM PST</p>
-  </div>
-  <div class="info-card">
-    <div style="background: rgba(47,91,159,0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-      <i class="fas fa-clock" style="font-size: 1.8rem; color: var(--primary);"></i>
-    </div>
-    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Business Hours</h3>
-    <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">7:00 AM - 5:00 PM</p>
-    <p style="font-size: 0.85rem; color: var(--gray-text); margin: 0;">Pakistan Standard Time</p>
-  </div>
-</section>
+  </section>
 
-<!-- WhatsApp Contact Section -->
-<section class="whatsapp-section">
-  <div class="whatsapp-card">
-    <div class="whatsapp-icon-wrap">
-      <i class="fab fa-whatsapp"></i>
-    </div>
-    <h2>Contact Us on WhatsApp</h2>
-    <p>Have questions about our courses? Contact us directly on WhatsApp and we'll get back to you promptly, In sha Allah.</p>
-    <a href="https://wa.me/923315055667" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-whatsapp"></i>
-      Chat on WhatsApp
-    </a>
-    <p class="whatsapp-note">Available Mon–Sat &bull; 7:00 AM – 9:00 PM PKT</p>
-  </div>
-</section>
+  <!-- FAQs -->
+  <section class="faqs">
+    <h2>Frequently Asked Questions</h2>
 
-<!-- FAQs -->
-<section class="faqs">
-  <h2>Frequently Asked Questions</h2>
-  
-  <div class="faq-item">
-    <div class="faq-question">How do I get started?</div>
-    <div class="faq-answer">Simply message us on WhatsApp using the button above, and our team will get in touch to discuss your needs and schedule a free trial class, In sha Allah.</div>
-  </div>
-  
-  <div class="faq-item">
-    <div class="faq-question">What do I need for online classes?</div>
-    <div class="faq-answer">You'll need a computer or tablet with stable internet, a webcam, and a microphone. We provide all learning materials and access to our online platform.</div>
-  </div>
-  
-  <div class="faq-item">
-    <div class="faq-question">Can I enroll multiple family members?</div>
-    <div class="faq-answer">Yes! We offer special family discounts for multiple students. Mention the number of learners in your message, and we'll provide personalized pricing options.</div>
-  </div>
-  
-  <div class="faq-item">
-    <div class="faq-question">What if I'm a complete beginner?</div>
-    <div class="faq-answer">No problem at all! We have beginner-friendly courses starting from the Arabic alphabet and gradually building your recitation and Tajweed skills.</div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h4>Tajweed-ul-Quran</h4>
-      <p>Learn Quran Online with Proper Tajweed & Understanding</p>
-      <p>Email: tajweedulquranofficial@outlook.com</p>
-      <p>WhatsApp: +92 331 5055667</p>
+    <div class="faq-item">
+      <div class="faq-question">How do I get started?</div>
+      <div class="faq-answer">Simply message us on WhatsApp using the button above, and our team will get in touch to
+        discuss your needs and schedule a free trial class, In sha Allah.</div>
     </div>
 
-    <div>
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="blog.html">Blogs</a>
-      <a href="contact.html">Contact</a>
+    <div class="faq-item">
+      <div class="faq-question">What do I need for online classes?</div>
+      <div class="faq-answer">You'll need a computer or tablet with stable internet, a webcam, and a microphone. We
+        provide all learning materials and access to our online platform.</div>
     </div>
 
-    <div>
-      <h4>Our Courses</h4>
-      <a href="quran-recitation.html">Quran Recitation</a>
-      <a href="tajweed-mastery.html">Tajweed Mastery</a>
-      <a href="quran-memorization.html">Quran Memorization</a>
-      <a href="arabic-language.html">Arabic Language</a>
-      <a href="noorani-qaida.html">Noorani Qaida</a>
-      <a href="quran-tafseer.html">Quran Tafseer</a>
-      <a href="islamic-studies.html">Islamic Studies</a>
+    <div class="faq-item">
+      <div class="faq-question">Can I enroll multiple family members?</div>
+      <div class="faq-answer">Yes! We offer special family discounts for multiple students. Mention the number of
+        learners in your message, and we'll provide personalized pricing options.</div>
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    © 2026 Tajweed-ul-Quran. All Rights Reserved.
-  </div>
-</footer>
+    <div class="faq-item">
+      <div class="faq-question">What if I'm a complete beginner?</div>
+      <div class="faq-answer">No problem at all! We have beginner-friendly courses starting from the Arabic alphabet and
+        gradually building your recitation and Tajweed skills.</div>
+    </div>
+  </section>
 
-<script>
-// Optional: Simple FAQ accordion
-document.querySelectorAll('.faq-question').forEach(item => {
-  item.addEventListener('click', () => {
-    const parent = item.parentElement;
-    parent.classList.toggle('active');
-  });
-});
-</script>
+  <!-- Footer -->
+  <footer style="background: #0a3d62; color: white; padding: 50px 20px 20px; font-family: Arial, sans-serif;">
+
+    <!-- Tajweed-ul-Quran Info on Top -->
+    <div style="text-align: center; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h3 style="font-size: 24px; margin-bottom: 12px;">Tajweed-ul-Quran</h3>
+      <p style="margin-bottom: 10px; opacity: 0.95;">Learn Quran Online with Proper Tajweed & Understanding</p>
+      <p><strong>Email:</strong> tajweedulquranofficial@outlook.com</p>
+      <p><strong>WhatsApp:</strong> +92 331 5055667</p>
+    </div>
+
+    <!-- Two Columns: Quick Links and Our Courses -->
+    <div
+      style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; justify-content: center;">
+    </div>
+
+    <!-- Footer Bottom -->
+    <div
+      style="text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px; opacity: 0.85;">
+      © 2026 Tajweed-ul-Quran. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Optional: Simple FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
+
 </html>
-
-
-
-
-
